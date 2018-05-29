@@ -1,51 +1,119 @@
-﻿using System.Collections.ObjectModel;
-using AutomationConfig.Interfaces;
+﻿using System;
+using System.Collections.ObjectModel;
 using OpenQA.Selenium;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Safari;
+using OpenQA.Selenium.Remote;
 using Driver.Interfaces;
+using AutomationConfig.Enums;
+using AutomationConfig.Interfaces;
+using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
 
 namespace Driver
 {
     public class AutomationDriver : IAutomationDriver
     {
-        private readonly IWebDriver Driver;
-        private readonly IAutomationConfig Config;
+        private readonly IWebDriver _driver;
+        private readonly IAutomationConfig _config;
 
         public AutomationDriver(IAutomationConfig config)
         {
-            Config = config;
+            _config = config;
+            _driver = SetupWebDriver();
+
+            _driver.Manage().Window.Maximize();
+        }
+
+        private IWebDriver SetupWebDriver()
+        {
+            var driverOptions = DesiredBrowser();
+
+            driverOptions.PlatformName = DesiredOS();
+
+            var hubUrl = SeleniumHubLocation();
+
+            return new RemoteWebDriver(hubUrl, driverOptions.ToCapabilities());
+        }
+
+        private DriverOptions DesiredBrowser()
+        {
+            var browser = _config.TargetBrowser;
+
+            switch (browser)
+            {
+                case Browser.InternetExplorer:
+                    return new InternetExplorerOptions();
+                case Browser.Edge:
+                    return new EdgeOptions();
+                case Browser.FireFox:
+                    return new FirefoxOptions();
+                case Browser.Safari:
+                    return new SafariOptions();
+                case Browser.Chome:
+                default:
+                    return new ChromeOptions();
+            }
+        }
+
+        private string DesiredOS()
+        {
+            var os = _config.TargetOperatingSystem;
+
+            switch (os)
+            {
+                case OperatingSystem.Linux:
+                    return new Platform(PlatformType.Linux).ToString();
+                case OperatingSystem.Mac:
+                    return new Platform(PlatformType.Mac).ToString();
+                case OperatingSystem.Windows:
+                    return new Platform(PlatformType.Windows).ToString();
+                case OperatingSystem.Any:
+                default:
+                    return new Platform(PlatformType.Any).ToString();
+            }
+        }
+
+        private Uri SeleniumHubLocation()
+        {
+            var location = _config.HubLocation;
+
+            return new Uri(location);
         }
 
         #region InheritedMethods
 
-        public string Url { get => Driver.Url; set => Driver.Url = value; }
+        public string Url { get => _driver.Url; set => _driver.Url = value; }
 
-        public string Title => Driver.Title;
+        public string Title => _driver.Title;
 
-        public string PageSource => Driver.PageSource;
+        public string PageSource => _driver.PageSource;
 
-        public string CurrentWindowHandle => Driver.CurrentWindowHandle;
+        public string CurrentWindowHandle => _driver.CurrentWindowHandle;
 
-        public ReadOnlyCollection<string> WindowHandles => Driver.WindowHandles;
+        public ReadOnlyCollection<string> WindowHandles => _driver.WindowHandles;
 
-        public void Close() => Driver.Close();
+        public void Close() => _driver.Close();
 
-        public void Dispose() => Driver.Dispose();
+        public void Dispose() => _driver.Dispose();
 
-        public object ExecuteAsyncScript(string script, params object[] args) => ((IJavaScriptExecutor)Driver).ExecuteAsyncScript(script, args);
+        public object ExecuteAsyncScript(string script, params object[] args) => ((IJavaScriptExecutor)_driver).ExecuteAsyncScript(script, args);
 
-        public object ExecuteScript(string script, params object[] args) => ((IJavaScriptExecutor)Driver).ExecuteScript(script, args);
+        public object ExecuteScript(string script, params object[] args) => ((IJavaScriptExecutor)_driver).ExecuteScript(script, args);
 
-        public IWebElement FindElement(By by) => Driver.FindElement(by);
+        public IWebElement FindElement(By by) => _driver.FindElement(by);
 
-        public ReadOnlyCollection<IWebElement> FindElements(By by) => Driver.FindElements(by);
+        public ReadOnlyCollection<IWebElement> FindElements(By by) => _driver.FindElements(by);
 
-        public IOptions Manage() => Driver.Manage();
+        public IOptions Manage() => _driver.Manage();
 
-        public INavigation Navigate() => Driver.Navigate();
+        public INavigation Navigate() => _driver.Navigate();
 
-        public void Quit() => Driver.Quit();
+        public void Quit() => _driver.Quit();
 
-        public ITargetLocator SwitchTo() => Driver.SwitchTo();
+        public ITargetLocator SwitchTo() => _driver.SwitchTo();
 
         #endregion
     }
