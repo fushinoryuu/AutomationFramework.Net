@@ -5,8 +5,8 @@ namespace AutomationConfig.Interfaces
 {
     public interface IAutomationConfig
     {
-        Browser TargetBrowser { get; set; }
-        OperatingSystem TargetOperatingSystem { get; set; }
-        string HubLocation { get; set; }
+        Browser TargetBrowser { get; }
+        OperatingSystem TargetOperatingSystem { get; }
+        string HubLocation { get; }
     }
 }
