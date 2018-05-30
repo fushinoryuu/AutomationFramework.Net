@@ -7,5 +7,15 @@
         "type": "git"
     },
     "author": "Christian Munoz",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "npm-scripts-info": "^0.3.7"
+    },
+    "scripts": {
+        "help": "npm-scripts-info",
+        "cake_default": "powershell ./build.ps1"
+    },
+    "scripts-info": {
+        "cake_default": "Runs the default Cake task."
+    }
 }
