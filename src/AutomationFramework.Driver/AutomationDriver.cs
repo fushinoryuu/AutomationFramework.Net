@@ -29,6 +29,19 @@ namespace AutomationFramework.Driver
 
         private IWebDriver SetupWebDriver()
         {
+            if (_config.ActiveDriverLocation is DriverLocation.LocalDriver)
+                return SetupLocalWebDriver();
+
+            return SetupRemoteWebDriver();
+        }
+
+        private IWebDriver SetupLocalWebDriver()
+        {
+            throw new NotImplementedException();
+        }
+
+        private IWebDriver SetupRemoteWebDriver()
+        {
             var driverOptions = DesiredBrowser();
 
             driverOptions.PlatformName = DesiredOS();

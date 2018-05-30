@@ -8,5 +8,6 @@ namespace AutomationFramework.Config.Interfaces
         OperatingSystem TargetOperatingSystem { get; }
         string HubLocation { get; }
         string BaseUrl { get; }
+        DriverLocation ActiveDriverLocation { get; }
     }
 }
