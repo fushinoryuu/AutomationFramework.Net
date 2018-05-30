@@ -1,7 +1,7 @@
+using Driver;
+using Driver.Interfaces;
 using NUnit.Framework;
 using AutomationConfig.Interfaces;
-using Driver.Interfaces;
-using Driver;
 
 namespace UiTesting
 {
@@ -21,6 +21,8 @@ namespace UiTesting
         public void SetUp()
         {
             Driver = new AutomationDriver(Config);
+
+            Driver.Navigate().GoToUrl(Config.BaseUrl);
         }
 
         [TearDown]

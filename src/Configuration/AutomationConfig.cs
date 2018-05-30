@@ -11,6 +11,7 @@ namespace AutomationConfig
         public Browser TargetBrowser { get; set; }
         public OperatingSystem TargetOperatingSystem { get; set; }
         public string HubLocation { get; set; }
+        public string BaseUrl { get; set; }
 
         public static IAutomationConfig DeserializeConfig(string fileName)
         {

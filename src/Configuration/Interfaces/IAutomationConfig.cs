@@ -8,5 +8,6 @@ namespace AutomationConfig.Interfaces
         Browser TargetBrowser { get; }
         OperatingSystem TargetOperatingSystem { get; }
         string HubLocation { get; }
+        string BaseUrl { get; }
     }
 }
