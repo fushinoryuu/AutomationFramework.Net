@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Driver.Interfaces;
-using PageObjects.Interfaces;
 using System.Collections.Generic;
+using AutomationFramework.Driver.Interfaces;
+using AutomationFramework.PageObjects.Interfaces;
 
 namespace AutomationFramework.PageObjects
 {

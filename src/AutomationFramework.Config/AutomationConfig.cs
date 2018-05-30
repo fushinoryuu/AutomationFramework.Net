@@ -1,8 +1,7 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
-using AutomationConfig.Enums;
-using AutomationConfig.Interfaces;
-using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
+using AutomationFramework.Config.Enums;
+using AutomationFramework.Config.Interfaces;
 
 namespace AutomationFramework.Config
 {

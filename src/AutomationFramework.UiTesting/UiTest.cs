@@ -1,7 +1,8 @@
-using Driver;
-using Driver.Interfaces;
 using NUnit.Framework;
-using AutomationConfig.Interfaces;
+using AutomationFramework.Config;
+using AutomationFramework.Config.Interfaces;
+using AutomationFramework.Driver;
+using AutomationFramework.Driver.Interfaces;
 
 namespace AutomationFramework.UiTesting
 {
@@ -14,7 +15,7 @@ namespace AutomationFramework.UiTesting
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            Config = AutomationConfig.AutomationConfig.DeserializeConfig("AutomationSettings.json");
+            Config = AutomationConfig.DeserializeConfig("AutomationSettings.json");
         }
 
         [SetUp]

@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Remote;
-using Driver.Interfaces;
-using AutomationConfig.Enums;
-using AutomationConfig.Interfaces;
-using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
+using OpenQA.Selenium.Firefox;
+using AutomationFramework.Config.Enums;
+using AutomationFramework.Driver.Interfaces;
+using AutomationFramework.Config.Interfaces;
+using OperatingSystem = AutomationFramework.Config.Enums.OperatingSystem;
 
 namespace AutomationFramework.Driver
 {

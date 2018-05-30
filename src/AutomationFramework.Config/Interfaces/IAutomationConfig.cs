@@ -1,5 +1,4 @@
-﻿using AutomationConfig.Enums;
-using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
+﻿using AutomationFramework.Config.Enums;
 
 namespace AutomationFramework.Config.Interfaces
 {
