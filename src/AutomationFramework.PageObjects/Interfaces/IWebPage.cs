@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using Driver.Interfaces;
 using System.Collections.Generic;
 
-namespace PageObjects.Interfaces
+namespace AutomationFramework.PageObjects.Interfaces
 {
     public interface IWebPage
     {

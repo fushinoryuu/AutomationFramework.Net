@@ -3,7 +3,7 @@ using Driver.Interfaces;
 using NUnit.Framework;
 using AutomationConfig.Interfaces;
 
-namespace UiTesting
+namespace AutomationFramework.UiTesting
 {
     [TestFixture, Parallelizable]
     public abstract class UiTest

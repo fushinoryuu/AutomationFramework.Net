@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Driver.Interfaces
+namespace AutomationFramework.Driver.Interfaces
 {
     public interface IAutomationDriver : IWebDriver, IJavaScriptExecutor
     {

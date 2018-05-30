@@ -3,7 +3,7 @@ using Driver.Interfaces;
 using PageObjects.Interfaces;
 using OpenQA.Selenium.Support.UI;
 
-namespace PageObjects.Utilities
+namespace AutomationFramework.PageObjects.Utilities
 {
     public class WebPageFactory : IWebPageFactory
     {

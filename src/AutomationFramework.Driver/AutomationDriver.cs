@@ -12,7 +12,7 @@ using AutomationConfig.Enums;
 using AutomationConfig.Interfaces;
 using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
 
-namespace Driver
+namespace AutomationFramework.Driver
 {
     public class AutomationDriver : IAutomationDriver
     {

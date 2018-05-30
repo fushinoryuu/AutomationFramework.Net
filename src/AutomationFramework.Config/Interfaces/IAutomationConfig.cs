@@ -1,7 +1,7 @@
 ﻿using AutomationConfig.Enums;
 using OperatingSystem = AutomationConfig.Enums.OperatingSystem;
 
-namespace AutomationConfig.Interfaces
+namespace AutomationFramework.Config.Interfaces
 {
     public interface IAutomationConfig
     {

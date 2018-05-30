@@ -4,7 +4,7 @@ using Driver.Interfaces;
 using PageObjects.Interfaces;
 using System.Collections.Generic;
 
-namespace PageObjects
+namespace AutomationFramework.PageObjects
 {
     public abstract class WebPage : IWebPage
     {

@@ -1,4 +1,4 @@
-﻿namespace AutomationConfig.Enums
+﻿namespace AutomationFramework.Config.Enums
 {
     public enum OperatingSystem
     {

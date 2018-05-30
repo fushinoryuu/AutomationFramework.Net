@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Configuration\Configuration.csproj" />
-    <ProjectReference Include="..\Driver\Driver.csproj" />
+    <ProjectReference Include="..\AutomationFramework.Config\AutomationFramework.Config.csproj" />
+    <ProjectReference Include="..\AutomationFramework.Driver\AutomationFramework.Driver.csproj" />
   </ItemGroup>
 
 </Project>

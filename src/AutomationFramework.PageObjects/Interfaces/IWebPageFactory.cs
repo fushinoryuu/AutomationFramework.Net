@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PageObjects.Interfaces
+namespace AutomationFramework.PageObjects.Interfaces
 {
     public interface IWebPageFactory
     {
