@@ -1,0 +1,11 @@
+{
+    "name": "automation-framework-dotnet",
+    "version": "1.0.0",
+    "description": "A framework for Selenium automation in .Net Standard.",
+    "repository": {
+        "url": "https://github.com/fushinoryuu/AutomationFramework.Net.git",
+        "type": "git"
+    },
+    "author": "Christian Munoz",
+    "license": "MIT"
+}
