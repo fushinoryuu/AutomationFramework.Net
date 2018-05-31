@@ -7,22 +7,6 @@ var configuration = Argument("configuration", "Release");
 var solutionFile = "./src/AutomationFramework.Net.sln";
 
 ///////////////////////////////////////////////////////////////////////////////
-// SETUP / TEARDOWN
-///////////////////////////////////////////////////////////////////////////////
-
-Setup(ctx =>
-{
-   // Executed BEFORE the first task.
-   Information("Running tasks...");
-});
-
-Teardown(ctx =>
-{
-   // Executed AFTER the last task.
-   Information("Finished running tasks.");
-});
-
-///////////////////////////////////////////////////////////////////////////////
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -32,7 +16,10 @@ Task("Default")
 Task("Clean")
     .Does(() =>
     {
-        CleanDirectory("./")
+        foreach (var project in ParseSolution(solutionFile).Projects)
+        {
+            DotNetCoreClean(project.Path.ToString());
+        }
     });
 
 Task("RestoreNuget")
