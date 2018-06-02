@@ -1,6 +1,9 @@
 ﻿using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using AutomationFramework.Config.Enums;
+using AutomationFramework.Config.Containers;
 using AutomationFramework.Config.Interfaces;
 
 namespace AutomationFramework.Config
@@ -10,14 +13,23 @@ namespace AutomationFramework.Config
         public Browser TargetBrowser { get; set; }
         public OperatingSystem TargetOperatingSystem { get; set; }
         public string HubLocation { get; set; }
-        public string BaseUrl { get; set; }
         public DriverLocation ActiveDriverLocation { get; set; }
+        public IList<BaseUrl> BaseUrls { get; set; }
+        public Environment ActiveEnvironment { get; set; }
 
         public static IAutomationConfig DeserializeConfig(string fileName)
         {
             var file = File.ReadAllText(fileName);
 
             return JsonConvert.DeserializeObject<AutomationConfig>(file);
+        }
+
+        public string GetBaseUrl(Environment environment)
+        {
+            return BaseUrls
+                .Where(url => url.EnvironmentName.Equals(environment))
+                .FirstOrDefault()
+                .Url;
         }
     }
 }

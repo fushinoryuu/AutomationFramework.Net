@@ -1,4 +1,6 @@
-﻿using AutomationFramework.Config.Enums;
+﻿using System.Collections.Generic;
+using AutomationFramework.Config.Enums;
+using AutomationFramework.Config.Containers;
 
 namespace AutomationFramework.Config.Interfaces
 {
@@ -7,7 +9,10 @@ namespace AutomationFramework.Config.Interfaces
         Browser TargetBrowser { get; }
         OperatingSystem TargetOperatingSystem { get; }
         string HubLocation { get; }
-        string BaseUrl { get; }
+        IList<BaseUrl> BaseUrls { get; }
         DriverLocation ActiveDriverLocation { get; }
+        Environment ActiveEnvironment { get; }
+
+        string GetBaseUrl(Environment environment);
     }
 }

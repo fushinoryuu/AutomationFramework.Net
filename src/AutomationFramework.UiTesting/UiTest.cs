@@ -3,14 +3,15 @@ using AutomationFramework.Config;
 using AutomationFramework.Config.Interfaces;
 using AutomationFramework.Driver;
 using AutomationFramework.Driver.Interfaces;
+using AutomationFramework.Config.Enums;
 
 namespace AutomationFramework.UiTesting
 {
     [TestFixture, Parallelizable]
     public abstract class UiTest
     {
-        protected IAutomationConfig Config;
         protected IAutomationDriver Driver;
+        protected static IAutomationConfig Config;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -23,7 +24,9 @@ namespace AutomationFramework.UiTesting
         {
             Driver = new AutomationDriver(Config);
 
-            Driver.Navigate().GoToUrl(Config.BaseUrl);
+            var env = Config.ActiveEnvironment;
+
+            Driver.Navigate().GoToUrl(Config.GetBaseUrl(env));
         }
 
         [TearDown]
