@@ -12,7 +12,7 @@ namespace AutomationFramework.Config
     {
         public Browser TargetBrowser { get; set; }
         public OperatingSystem TargetOperatingSystem { get; set; }
-        public string HubLocation { get; set; }
+        public IList<HubLocation> HubLocations { get; set; }
         public DriverLocation ActiveDriverLocation { get; set; }
         public IList<BaseUrl> BaseUrls { get; set; }
         public Environment ActiveEnvironment { get; set; }
@@ -27,7 +27,15 @@ namespace AutomationFramework.Config
         public string GetBaseUrl(Environment environment)
         {
             return BaseUrls
-                .Where(url => url.EnvironmentName.Equals(environment))
+                .Where(item => item.EnvironmentName.Equals(environment))
+                .FirstOrDefault()
+                .Url;
+        }
+
+        public string GetDriverLocation(DriverLocation location)
+        {
+            return HubLocations
+                .Where(item => item.Location.Equals(location))
                 .FirstOrDefault()
                 .Url;
         }

@@ -8,11 +8,12 @@ namespace AutomationFramework.Config.Interfaces
     {
         Browser TargetBrowser { get; }
         OperatingSystem TargetOperatingSystem { get; }
-        string HubLocation { get; }
+        IList<HubLocation> HubLocations { get; }
         IList<BaseUrl> BaseUrls { get; }
         DriverLocation ActiveDriverLocation { get; }
         Environment ActiveEnvironment { get; }
 
         string GetBaseUrl(Environment environment);
+        string GetDriverLocation(DriverLocation location);
     }
 }

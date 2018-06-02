@@ -91,9 +91,10 @@ namespace AutomationFramework.Driver
 
         private Uri SeleniumHubLocation()
         {
-            var location = _config.HubLocation;
+            var location = _config.ActiveDriverLocation;
+            var url = _config.GetDriverLocation(location);
 
-            return new Uri(location);
+            return new Uri(url);
         }
 
         #region InheritedMethods
