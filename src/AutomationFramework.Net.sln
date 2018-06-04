@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.Driver"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.PageObjects", "AutomationFramework.PageObjects\AutomationFramework.PageObjects.csproj", "{C8DB9091-1579-4460-826D-D45D6B431B42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.UiTesting", "AutomationFramework.UiTesting\AutomationFramework.UiTesting.csproj", "{B04627B4-8583-4FC3-9B6B-A5376B1725FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.UiTesting", "AutomationFramework.UiTesting\AutomationFramework.UiTesting.csproj", "{B04627B4-8583-4FC3-9B6B-A5376B1725FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.NetCoreUnitTesting", "AutomationFramework.NetCoreUnitTesting\AutomationFramework.NetCoreUnitTesting.csproj", "{F742CC67-A172-4062-818A-880BBEBF338A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B04627B4-8583-4FC3-9B6B-A5376B1725FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B04627B4-8583-4FC3-9B6B-A5376B1725FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B04627B4-8583-4FC3-9B6B-A5376B1725FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F742CC67-A172-4062-818A-880BBEBF338A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F742CC67-A172-4062-818A-880BBEBF338A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F742CC67-A172-4062-818A-880BBEBF338A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F742CC67-A172-4062-818A-880BBEBF338A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
