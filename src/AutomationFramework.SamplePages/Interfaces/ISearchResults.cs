@@ -2,8 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IPricing : IBanner, IWebPage
+    public interface ISearchResults : IBanner, IWebPage
     {
-        IContactUs ClickContactUsLink();
     }
 }

@@ -2,8 +2,8 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IPricing : IBanner, IWebPage
+    public interface IContactUs : IWebPage
     {
-        IContactUs ClickContactUsLink();
+        IHome ClickGitHubLogo();
     }
 }
