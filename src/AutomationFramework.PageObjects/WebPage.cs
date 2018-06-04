@@ -10,6 +10,7 @@ namespace AutomationFramework.PageObjects
     {
         public IAutomationDriver Driver { get; set; }
         public WebDriverWait Wait { get; set; }
+        public IWebPageFactory Factory { get; set; }
 
         public IWebElement FindElementBy(By by)
         {
