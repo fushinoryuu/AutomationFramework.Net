@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.UiTesti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.NetCoreUnitTesting", "AutomationFramework.NetCoreUnitTesting\AutomationFramework.NetCoreUnitTesting.csproj", "{F742CC67-A172-4062-818A-880BBEBF338A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.SamplePages", "AutomationFramework.SamplePages\AutomationFramework.SamplePages.csproj", "{01402720-9016-456E-AF6F-14D3CB47EAC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F742CC67-A172-4062-818A-880BBEBF338A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F742CC67-A172-4062-818A-880BBEBF338A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F742CC67-A172-4062-818A-880BBEBF338A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01402720-9016-456E-AF6F-14D3CB47EAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01402720-9016-456E-AF6F-14D3CB47EAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01402720-9016-456E-AF6F-14D3CB47EAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01402720-9016-456E-AF6F-14D3CB47EAC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
