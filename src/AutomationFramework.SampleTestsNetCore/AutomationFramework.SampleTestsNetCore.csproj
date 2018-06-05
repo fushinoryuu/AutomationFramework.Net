@@ -16,6 +16,7 @@
     <ProjectReference Include="..\AutomationFramework.Config\AutomationFramework.Config.csproj" />
     <ProjectReference Include="..\AutomationFramework.Driver\AutomationFramework.Driver.csproj" />
     <ProjectReference Include="..\AutomationFramework.PageObjects\AutomationFramework.PageObjects.csproj" />
+    <ProjectReference Include="..\AutomationFramework.SamplePages\AutomationFramework.SamplePages.csproj" />
     <ProjectReference Include="..\AutomationFramework.UiTesting\AutomationFramework.UiTesting.csproj" />
   </ItemGroup>
 
