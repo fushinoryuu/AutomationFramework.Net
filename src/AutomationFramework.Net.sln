@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.PageObj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.UiTesting", "AutomationFramework.UiTesting\AutomationFramework.UiTesting.csproj", "{B04627B4-8583-4FC3-9B6B-A5376B1725FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.NetCoreUnitTesting", "AutomationFramework.NetCoreUnitTesting\AutomationFramework.NetCoreUnitTesting.csproj", "{F742CC67-A172-4062-818A-880BBEBF338A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.SampleTestsNetCore", "AutomationFramework.SampleTestsNetCore\AutomationFramework.SampleTestsNetCore.csproj", "{F742CC67-A172-4062-818A-880BBEBF338A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework.SamplePages", "AutomationFramework.SamplePages\AutomationFramework.SamplePages.csproj", "{01402720-9016-456E-AF6F-14D3CB47EAC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomationFramework.SamplePages", "AutomationFramework.SamplePages\AutomationFramework.SamplePages.csproj", "{01402720-9016-456E-AF6F-14D3CB47EAC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
