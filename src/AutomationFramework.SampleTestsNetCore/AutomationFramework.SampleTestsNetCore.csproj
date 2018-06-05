@@ -20,4 +20,10 @@
     <ProjectReference Include="..\AutomationFramework.UiTesting\AutomationFramework.UiTesting.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AutomationSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

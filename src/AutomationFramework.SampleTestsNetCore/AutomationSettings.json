@@ -1,0 +1,18 @@
+{
+    "TargetBrowser": "Chrome",
+    "TargetOperatingSystem": "Any",
+    "HubLocations": [
+        {
+            "Location": "LocalGrid",
+            "Url": "http://localhost:4444/wd/hub"
+        }
+    ],
+    "ActiveDriverLocation": "LocalGrid",
+    "BaseUrls": [
+        {
+            "EnvironmentName": "Stage",
+            "Url": "https://github.com/"
+        }
+    ],
+    "ActiveEnvironment": "Stage"
+}
