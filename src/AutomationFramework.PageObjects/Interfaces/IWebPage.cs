@@ -14,5 +14,6 @@ namespace AutomationFramework.PageObjects.Interfaces
         void WaitForPageToLoad();
         IWebElement FindElementBy(By by);
         IList<IWebElement> FindElementsBy(By by);
+        bool CheckPageForText(string text);
     }
 }

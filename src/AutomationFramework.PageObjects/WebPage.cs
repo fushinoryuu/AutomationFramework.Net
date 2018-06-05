@@ -31,5 +31,10 @@ namespace AutomationFramework.PageObjects
             foreach (var element in WebElements)
                 Wait.Until(func => element.Displayed && element.Enabled);
         }
+
+        public bool CheckPageForText(string text)
+        {
+            return Driver.PageSource.Contains(text);
+        }
     }
 }
