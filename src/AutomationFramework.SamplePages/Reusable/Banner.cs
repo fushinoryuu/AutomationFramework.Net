@@ -1,27 +1,60 @@
 ﻿using OpenQA.Selenium;
+using System.Collections.Generic;
 using AutomationFramework.PageObjects;
-using AutomationFramework.SamplePages.Interfaces;
 using AutomationFramework.SamplePages.Pages;
+using AutomationFramework.SamplePages.Interfaces;
 
 namespace AutomationFramework.SamplePages.Reusable
 {
     internal class Banner : WebPage, IBanner
     {
+        #region WebElements
+
         protected IWebElement GitHubLogo => FindElementBy(By.XPath("//span[@aria-label='Homepage']"));
+        protected IWebElement FeaturesLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Features']"));
+        protected IWebElement BusinessLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
+        protected IWebElement ExploreLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Explore']"));
+        protected IWebElement MarketplaceLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Marketplace']"));
+        protected IWebElement PricingLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
+        protected IWebElement SearchTextBox => FindElementBy(By.Name("q"));
+
+        #endregion
+
+        #region Constructor
+
+        public Banner()
+        {
+            WebElements.AddRange(
+                new List<IWebElement>
+                {
+                    GitHubLogo, FeaturesLink, BusinessLink, ExploreLink,
+                    MarketplaceLink, PricingLink, SearchTextBox
+                });
+        }
+
+        #endregion
+
+        #region Methods
 
         public IBusiness ClickBusinessLink()
         {
-            throw new System.NotImplementedException();
+            BusinessLink.Click();
+
+            return Factory.Get<BusinessPage>();
         }
 
         public IExplore ClickExploreLink()
         {
-            throw new System.NotImplementedException();
+            ExploreLink.Click();
+
+            return Factory.Get<ExplorePage>();
         }
 
         public IFeatures ClickFeaturesLink()
         {
-            throw new System.NotImplementedException();
+            FeaturesLink.Click();
+
+            return Factory.Get<FeaturesPage>();
         }
 
         public IHome ClickGitHubLogo()
@@ -33,22 +66,27 @@ namespace AutomationFramework.SamplePages.Reusable
 
         public IMarketplace ClickMarketplaceLink()
         {
-            throw new System.NotImplementedException();
+            MarketplaceLink.Click();
+
+            return Factory.Get<MarketplacePage>();
         }
 
         public IPricing ClickPricingLink()
         {
-            throw new System.NotImplementedException();
+            PricingLink.Click();
+
+            return Factory.Get<PricingPage>();
         }
 
         public ISearchResults SearchGitHub(string querryString)
         {
-            throw new System.NotImplementedException();
+            SearchTextBox.Click();
+            SearchTextBox.Clear();
+            SearchTextBox.SendKeys(querryString + Keys.Return);
+
+            return Factory.Get<SearchResultsPage>();
         }
 
-        public override void WaitForPageToLoad()
-        {
-            throw new System.NotImplementedException();
-        }
+        #endregion
     }
 }
