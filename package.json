@@ -13,9 +13,13 @@
     },
     "scripts": {
         "help": "npm-scripts-info",
-        "cake_default": "powershell ./build.ps1"
+        "cake_default": "powershell ./build.ps1",
+        "hub": "start call powershell ./selenium/HUB_LaunchSeleniumGrid.bat",
+        "node": "start call powershell ./selenium/NODE_LaunchSeleniumGrid.bat"
     },
     "scripts-info": {
-        "cake_default": "Runs the default Cake task."
+        "cake_default": "Runs the default Cake task.",
+        "hub": "Starts a Selenium Server Hub.",
+        "node": "Starts a Selenium Server Node."
     }
 }
