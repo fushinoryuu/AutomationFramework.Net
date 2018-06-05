@@ -40,10 +40,5 @@ namespace AutomationFramework.SamplePages.Pages
         {
             throw new NotImplementedException();
         }
-
-        public override void WaitForPageToLoad()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
