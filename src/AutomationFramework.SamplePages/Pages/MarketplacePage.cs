@@ -41,6 +41,11 @@ namespace AutomationFramework.SamplePages.Pages
             throw new NotImplementedException();
         }
 
+        public override void InitializePageSections()
+        {
+            throw new NotImplementedException();
+        }
+
         public ISearchResults SearchGitHub(string querryString)
         {
             throw new NotImplementedException();

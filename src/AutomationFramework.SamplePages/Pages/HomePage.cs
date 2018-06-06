@@ -6,7 +6,12 @@ namespace AutomationFramework.SamplePages.Pages
 {
     public class HomePage : WebPage, IHome
     {
-        private IBanner _banner = new Banner();
+        private INavBar _banner;
+
+        public override void InitializePageSections()
+        {
+            _banner = new LoggedOutNavBar(Driver, Wait, Factory, WebElements);
+        }
 
         public IBusiness ClickBusinessLink() => _banner.ClickBusinessLink();
 

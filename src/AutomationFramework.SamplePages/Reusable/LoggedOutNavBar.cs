@@ -1,34 +1,41 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using AutomationFramework.PageObjects;
 using AutomationFramework.SamplePages.Pages;
 using AutomationFramework.SamplePages.Interfaces;
+using AutomationFramework.Driver.Interfaces;
+using AutomationFramework.PageObjects.Interfaces;
+using OpenQA.Selenium.Support.UI;
 
 namespace AutomationFramework.SamplePages.Reusable
 {
-    internal class Banner : WebPage, IBanner
+    internal class LoggedOutNavBar : PageSection, INavBar
     {
         #region WebElements
 
-        protected IWebElement GitHubLogo => FindElementBy(By.XPath("//span[@aria-label='Homepage']"));
-        protected IWebElement FeaturesLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Features']"));
-        protected IWebElement BusinessLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
-        protected IWebElement ExploreLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Explore']"));
-        protected IWebElement MarketplaceLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Marketplace']"));
-        protected IWebElement PricingLink => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
-        protected IWebElement SearchTextBox => FindElementBy(By.Name("q"));
+        [FindsBy(How = How.XPath, Using = "//span[@aria-label='Homepage']")]
+        protected IWebElement GitHubLogo; // => FindElementBy(By.XPath("//span[@aria-label='Homepage']"));
+
+        protected IWebElement FeaturesLink; // => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Features']"));
+        protected IWebElement BusinessLink; // => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
+        protected IWebElement ExploreLink; // => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Explore']"));
+        protected IWebElement MarketplaceLink; // => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Marketplace']"));
+        protected IWebElement PricingLink; // => FindElementBy(By.XPath("//div[@class='HeaderMenu']//a[text()='Pricing']"));
+        protected IWebElement SearchTextBox; // => FindElementBy(By.Name("q"));
 
         #endregion
 
         #region Constructor
 
-        public Banner()
+        public LoggedOutNavBar(IAutomationDriver driver, WebDriverWait wait, IWebPageFactory factory,
+            List<IWebElement> elementsList) : base (driver, wait, factory, elementsList)
         {
             WebElements.AddRange(
                 new List<IWebElement>
                 {
-                    GitHubLogo, FeaturesLink, BusinessLink, ExploreLink,
-                    MarketplaceLink, PricingLink, SearchTextBox
+                    GitHubLogo//, FeaturesLink, BusinessLink, ExploreLink,
+                    //MarketplaceLink, PricingLink, SearchTextBox
                 });
         }
 

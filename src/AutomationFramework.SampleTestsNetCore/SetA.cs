@@ -11,9 +11,9 @@ namespace AutomationFramework.SampleTestsNetCore
         [Test]
         public void CheckHomePageForText()
         {
-            //var home = Factory.Get<HomePage>();
+            var home = Factory.Get<HomePage>();
 
-            //home.CheckPageForText("A better way to work together").ShouldBeTrue();
+            home.CheckPageForText("A better way to work together").ShouldBeTrue();
         }
     }
 }

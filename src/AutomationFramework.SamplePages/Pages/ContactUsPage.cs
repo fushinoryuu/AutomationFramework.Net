@@ -10,5 +10,10 @@ namespace AutomationFramework.SamplePages.Pages
         {
             throw new NotImplementedException();
         }
+
+        public override void InitializePageSections()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
