@@ -6,7 +6,6 @@ using AutomationFramework.Driver.Interfaces;
 using AutomationFramework.PageObjects.Utilities;
 using AutomationFramework.PageObjects.Interfaces;
 
-
 namespace AutomationFramework.UiTesting
 {
     [TestFixture, Parallelizable]
