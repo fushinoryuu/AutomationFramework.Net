@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IBusiness : IBanner, IWebPage
+    public interface IBusiness : INavBar, IWebPage
     {
         IBusiness ClickTeamsUseGitHubButton();
     }

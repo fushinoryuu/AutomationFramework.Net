@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IExplore : IBanner, IWebPage
+    public interface IExplore : INavBar, IWebPage
     {
         IExplore ClickTrendingRepositoriesTab();
         IExplore ClickTrendingDevelopersTab();

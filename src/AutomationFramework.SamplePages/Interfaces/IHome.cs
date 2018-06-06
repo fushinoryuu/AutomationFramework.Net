@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IHome : IBanner, IWebPage
+    public interface IHome : INavBar, IWebPage
     {
     }
 }

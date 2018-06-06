@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IFeatures : IBanner, IWebPage
+    public interface IFeatures : INavBar, IWebPage
     {
         IFeatures ClickFeatureTile(string nameOfFeature);
     }

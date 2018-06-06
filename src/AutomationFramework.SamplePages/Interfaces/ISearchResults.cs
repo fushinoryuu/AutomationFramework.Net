@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface ISearchResults : IBanner, IWebPage
+    public interface ISearchResults : INavBar, IWebPage
     {
     }
 }

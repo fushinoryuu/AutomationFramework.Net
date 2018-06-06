@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IPricing : IBanner, IWebPage
+    public interface IPricing : INavBar, IWebPage
     {
         IContactUs ClickContactUsLink();
     }

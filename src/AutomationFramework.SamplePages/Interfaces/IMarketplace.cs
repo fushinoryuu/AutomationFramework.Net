@@ -2,7 +2,7 @@
 
 namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IMarketplace : IBanner, IWebPage
+    public interface IMarketplace : INavBar, IWebPage
     {
         IMarketplace SearchMarketPlace(string nameOrDescription);
         IMarketplace ClickCategory(string nameOfCategory);

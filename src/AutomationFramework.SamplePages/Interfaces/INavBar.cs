@@ -1,6 +1,6 @@
 ﻿namespace AutomationFramework.SamplePages.Interfaces
 {
-    public interface IBanner
+    public interface INavBar
     {
         IHome ClickGitHubLogo();
         IFeatures ClickFeaturesLink();
