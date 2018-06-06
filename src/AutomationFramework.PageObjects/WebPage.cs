@@ -9,16 +9,16 @@ namespace AutomationFramework.PageObjects
 {
     public abstract class WebPage : IWebPage
     {
+        #region Properties
+
         public IAutomationDriver Driver { get; set; }
         public WebDriverWait Wait { get; set; }
         public IWebPageFactory Factory { get; set; }
-        protected List<IWebElement> WebElements;
+        protected List<IWebElement> WebElements { get; set; } = new List<IWebElement>();
 
-        protected WebPage() => WebElements = new List<IWebElement>();
+        #endregion
 
-        public IWebElement FindElementBy(By by) => Driver.FindElement(by);
-
-        public IList<IWebElement> FindElementsBy(By by) => Driver.FindElements(by);
+        #region Methods
 
         public virtual void WaitForPageToLoad()
         {
@@ -32,9 +32,12 @@ namespace AutomationFramework.PageObjects
                 Wait.Until(func => element.Displayed && element.Enabled);
         }
 
-        public bool CheckPageForText(string text)
-        {
-            return Driver.PageSource.Contains(text);
-        }
+        public IWebElement FindElementBy(By by) => Driver.FindElement(by);
+
+        public IList<IWebElement> FindElementsBy(By by) => Driver.FindElements(by);
+
+        public bool CheckPageForText(string text) => Driver.PageSource.Contains(text);
+
+        #endregion
     }
 }
