@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using AutomationFramework.Config.Enums;
 using AutomationFramework.Config.Containers;
 using AutomationFramework.Config.Interfaces;
@@ -10,11 +11,20 @@ namespace AutomationFramework.Config
 {
     public class AutomationConfig : IAutomationConfig
     {
+        [JsonConverter(typeof(StringEnumConverter))]
         public Browser TargetBrowser { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public OperatingSystem TargetOperatingSystem { get; set; }
+
         public IList<HubLocation> HubLocations { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public DriverLocation ActiveDriverLocation { get; set; }
+
         public IList<BaseUrl> BaseUrls { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public Environment ActiveEnvironment { get; set; }
 
         public static IAutomationConfig DeserializeConfig(string fileName)
