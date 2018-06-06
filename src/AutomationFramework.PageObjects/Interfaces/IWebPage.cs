@@ -15,5 +15,6 @@ namespace AutomationFramework.PageObjects.Interfaces
         IWebElement FindElementBy(By by);
         IList<IWebElement> FindElementsBy(By by);
         bool CheckPageForText(string text);
+        void InitializePageSections();
     }
 }

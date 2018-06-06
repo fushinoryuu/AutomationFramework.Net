@@ -19,9 +19,11 @@ namespace AutomationFramework.PageObjects.Utilities
             var instance = new T
             {
                 Driver = _driver,
-                Wait = new WebDriverWait(_driver, new TimeSpan(0, 0, 30))
+                Wait = new WebDriverWait(_driver, new TimeSpan(0, 0, 30)),
+                Factory = this
             };
 
+            instance.InitializePageSections();
             instance.WaitForPageToLoad();
 
             return instance;

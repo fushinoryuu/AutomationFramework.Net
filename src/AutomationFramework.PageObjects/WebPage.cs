@@ -38,6 +38,8 @@ namespace AutomationFramework.PageObjects
 
         public bool CheckPageForText(string text) => Driver.PageSource.Contains(text);
 
+        public abstract void InitializePageSections();
+
         #endregion
     }
 }
