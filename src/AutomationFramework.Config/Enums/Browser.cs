@@ -2,7 +2,7 @@
 {
     public enum Browser
     {
-        Chome,
+        Chrome,
         InternetExplorer,
         Edge,
         FireFox,

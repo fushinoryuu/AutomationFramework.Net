@@ -65,7 +65,7 @@ namespace AutomationFramework.Driver
                     return new FirefoxOptions();
                 case Browser.Safari:
                     return new SafariOptions();
-                case Browser.Chome:
+                case Browser.Chrome:
                 default:
                     return new ChromeOptions();
             }
