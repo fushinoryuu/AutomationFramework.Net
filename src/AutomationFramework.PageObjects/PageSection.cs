@@ -8,7 +8,7 @@ namespace AutomationFramework.PageObjects
 {
     public abstract class PageSection
     {
-        #region Properties
+        #region Fields
 
         protected IAutomationDriver Driver;
         protected WebDriverWait Wait;
