@@ -1,49 +1,31 @@
 ﻿using System;
 using AutomationFramework.PageObjects;
+using AutomationFramework.SamplePages.Reusable;
 using AutomationFramework.SamplePages.Interfaces;
 
 namespace AutomationFramework.SamplePages.Pages
 {
     public class SearchResultsPage : WebPage, ISearchResults
     {
-        public IBusiness ClickBusinessLink()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IExplore ClickExploreLink()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IFeatures ClickFeaturesLink()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IHome ClickGitHubLogo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IMarketplace ClickMarketplaceLink()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IPricing ClickPricingLink()
-        {
-            throw new NotImplementedException();
-        }
+        private INavBar _banner;
 
         public override void InitializePageSections()
         {
-            throw new NotImplementedException();
+            _banner = new LoggedOutNavBar(Driver, Wait, Factory, WebElements);
         }
 
-        public ISearchResults SearchGitHub(string querryString)
-        {
-            throw new NotImplementedException();
-        }
+        public IBusiness ClickBusinessLink() => _banner.ClickBusinessLink();
+
+        public IExplore ClickExploreLink() => _banner.ClickExploreLink();
+
+        public IFeatures ClickFeaturesLink() => _banner.ClickFeaturesLink();
+
+        public IHome ClickGitHubLogo() => _banner.ClickGitHubLogo();
+
+        public IMarketplace ClickMarketplaceLink() => _banner.ClickMarketplaceLink();
+
+        public IPricing ClickPricingLink() => _banner.ClickPricingLink();
+
+        public ISearchResults SearchGitHub(string querryString) => _banner.SearchGitHub(querryString);
     }
 }

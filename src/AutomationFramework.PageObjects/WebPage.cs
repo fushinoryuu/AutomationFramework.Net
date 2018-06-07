@@ -38,7 +38,10 @@ namespace AutomationFramework.PageObjects
 
         public bool CheckPageForText(string text) => Driver.PageSource.Contains(text);
 
-        public abstract void InitializePageSections();
+        /// <summary>
+        /// This method should only be overwritten by a web page class that uses page section objects.
+        /// </summary>
+        public virtual void InitializePageSections() { }
 
         #endregion
     }

@@ -1,12 +1,20 @@
 ﻿using System;
 using AutomationFramework.PageObjects;
+using AutomationFramework.SamplePages.Reusable;
 using AutomationFramework.SamplePages.Interfaces;
 
 namespace AutomationFramework.SamplePages.Pages
 {
     public class MarketplacePage : WebPage, IMarketplace
     {
-        public IBusiness ClickBusinessLink()
+        private INavBar _banner;
+
+        public override void InitializePageSections()
+        {
+            _banner = new LoggedOutNavBar(Driver, Wait, Factory, WebElements);
+        }
+
+        public IMarketplace SearchMarketPlace(string nameOrDescription)
         {
             throw new NotImplementedException();
         }
@@ -16,44 +24,18 @@ namespace AutomationFramework.SamplePages.Pages
             throw new NotImplementedException();
         }
 
-        public IExplore ClickExploreLink()
-        {
-            throw new NotImplementedException();
-        }
+        public IBusiness ClickBusinessLink() => _banner.ClickBusinessLink();
 
-        public IFeatures ClickFeaturesLink()
-        {
-            throw new NotImplementedException();
-        }
+        public IExplore ClickExploreLink() => _banner.ClickExploreLink();
 
-        public IHome ClickGitHubLogo()
-        {
-            throw new NotImplementedException();
-        }
+        public IFeatures ClickFeaturesLink() => _banner.ClickFeaturesLink();
 
-        public IMarketplace ClickMarketplaceLink()
-        {
-            throw new NotImplementedException();
-        }
+        public IHome ClickGitHubLogo() => _banner.ClickGitHubLogo();
 
-        public IPricing ClickPricingLink()
-        {
-            throw new NotImplementedException();
-        }
+        public IMarketplace ClickMarketplaceLink() => _banner.ClickMarketplaceLink();
 
-        public override void InitializePageSections()
-        {
-            throw new NotImplementedException();
-        }
+        public IPricing ClickPricingLink() => _banner.ClickPricingLink();
 
-        public ISearchResults SearchGitHub(string querryString)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IMarketplace SearchMarketPlace(string nameOrDescription)
-        {
-            throw new NotImplementedException();
-        }
+        public ISearchResults SearchGitHub(string querryString) => _banner.SearchGitHub(querryString);
     }
 }
