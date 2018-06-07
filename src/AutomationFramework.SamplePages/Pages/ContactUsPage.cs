@@ -1,4 +1,4 @@
-﻿using System;
+﻿using OpenQA.Selenium;
 using AutomationFramework.PageObjects;
 using AutomationFramework.SamplePages.Interfaces;
 
@@ -6,14 +6,26 @@ namespace AutomationFramework.SamplePages.Pages
 {
     public class ContactUsPage : WebPage, IContactUs
     {
-        public IHome ClickGitHubLogo()
+        #region WebElements
+
+        protected IWebElement GitHubLogo => FindElementBy(By.ClassName("octicon"));
+
+        #endregion
+
+        #region Initializers
+
+        public ContactUsPage()
         {
-            throw new NotImplementedException();
+            WebElements.Add(GitHubLogo);
         }
 
-        public override void InitializePageSections()
+        #endregion
+
+        public IHome ClickGitHubLogo()
         {
-            throw new NotImplementedException();
+            GitHubLogo.Click();
+
+            return Factory.Get<HomePage>();
         }
     }
 }

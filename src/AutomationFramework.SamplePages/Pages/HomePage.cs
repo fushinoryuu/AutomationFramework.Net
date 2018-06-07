@@ -6,12 +6,22 @@ namespace AutomationFramework.SamplePages.Pages
 {
     public class HomePage : WebPage, IHome
     {
+        #region PageSections
+
         private INavBar _banner;
+
+        #endregion
+
+        #region Initializers
 
         public override void InitializePageSections()
         {
             _banner = new LoggedOutNavBar(Driver, Wait, Factory, WebElements);
         }
+
+        #endregion
+
+        #region Methods
 
         public IBusiness ClickBusinessLink() => _banner.ClickBusinessLink();
 
@@ -26,5 +36,7 @@ namespace AutomationFramework.SamplePages.Pages
         public IPricing ClickPricingLink() => _banner.ClickPricingLink();
 
         public ISearchResults SearchGitHub(string querryString) => _banner.SearchGitHub(querryString);
+
+        #endregion
     }
 }

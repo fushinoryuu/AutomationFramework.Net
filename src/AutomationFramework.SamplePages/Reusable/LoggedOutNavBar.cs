@@ -19,11 +19,11 @@ namespace AutomationFramework.SamplePages.Reusable
         protected IWebElement ExploreLink => Driver.FindElement(By.CssSelector("a[href*='/explore']"));
         protected IWebElement MarketplaceLink => Driver.FindElement(By.CssSelector("a[href*='/marketplace']"));
         protected IWebElement PricingLink => Driver.FindElement(By.CssSelector("a[href*='/pricing']"));
-        protected IWebElement SearchTextBox => Driver.FindElement(By.Name("q"));
+        protected IWebElement SearchTextbox => Driver.FindElement(By.Name("q"));
 
         #endregion
 
-        #region Constructor
+        #region Initializers
 
         public LoggedOutNavBar(IAutomationDriver driver, WebDriverWait wait, IWebPageFactory factory,
             List<IWebElement> elementsList) : base(driver, wait, factory, elementsList)
@@ -32,7 +32,7 @@ namespace AutomationFramework.SamplePages.Reusable
                 new List<IWebElement>
                 {
                     GitHubLogo, FeaturesLink, BusinessLink, ExploreLink,
-                    MarketplaceLink, PricingLink, SearchTextBox
+                    MarketplaceLink, PricingLink, SearchTextbox
                 });
         }
 
@@ -84,9 +84,9 @@ namespace AutomationFramework.SamplePages.Reusable
 
         public ISearchResults SearchGitHub(string querryString)
         {
-            SearchTextBox.Click();
-            SearchTextBox.Clear();
-            SearchTextBox.SendKeys(querryString + Keys.Return);
+            SearchTextbox.Click();
+            SearchTextbox.Clear();
+            SearchTextbox.SendKeys(querryString + Keys.Return);
 
             return Factory.Get<SearchResultsPage>();
         }
