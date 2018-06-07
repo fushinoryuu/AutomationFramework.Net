@@ -16,7 +16,7 @@ namespace AutomationFramework.SamplePages.Pages
 
         #region WebElements
 
-        protected IWebElement TeamsUsGitHubButton => FindElementBy(By.CssSelector("a[href*='/business/customers']"));
+        protected IWebElement TeamsUseGitHubButton => FindElementBy(By.CssSelector("a[href*='/business/customers']"));
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace AutomationFramework.SamplePages.Pages
 
         public BusinessPage()
         {
-            WebElements.Add(TeamsUsGitHubButton);
+            WebElements.Add(TeamsUseGitHubButton);
         }
 
         public override void InitializePageSections()
@@ -38,7 +38,9 @@ namespace AutomationFramework.SamplePages.Pages
 
         public IBusiness ClickTeamsUseGitHubButton()
         {
-            throw new NotImplementedException();
+            TeamsUseGitHubButton.Click();
+
+            return Factory.Get<BusinessPage>();
         }
 
         public IBusiness ClickBusinessLink() => _banner.ClickBusinessLink();
