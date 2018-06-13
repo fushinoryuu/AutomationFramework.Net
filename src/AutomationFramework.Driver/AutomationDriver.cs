@@ -18,10 +18,12 @@ namespace AutomationFramework.Driver
     {
         private readonly IWebDriver _driver;
         private readonly IAutomationConfig _config;
+        private readonly Browser _browser;
 
-        public AutomationDriver(IAutomationConfig config)
+        public AutomationDriver(IAutomationConfig config, Browser desiredBrowser)
         {
             _config = config;
+            _browser = desiredBrowser;
             _driver = SetupWebDriver();
 
             _driver.Manage().Window.Maximize();
@@ -53,9 +55,7 @@ namespace AutomationFramework.Driver
 
         private DriverOptions DesiredBrowser()
         {
-            var browser = _config.TargetBrowser;
-
-            switch (browser)
+            switch (_browser)
             {
                 case Browser.InternetExplorer:
                     return new InternetExplorerOptions();
