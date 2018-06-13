@@ -1,5 +1,9 @@
 {
-    "TargetBrowser": "Chrome",
+    "TargetBrowser": [
+        "Chrome",
+        "InternetExplorer",
+        "FireFox"
+    ],
     "TargetOperatingSystem": "Any",
     "HubLocations": [
         {

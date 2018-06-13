@@ -12,7 +12,7 @@ namespace AutomationFramework.Config
     public class AutomationConfig : IAutomationConfig
     {
         [JsonConverter(typeof(StringEnumConverter))]
-        public Browser TargetBrowser { get; set; }
+        public IList<Browser> TargetBrowsers { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public OperatingSystem TargetOperatingSystem { get; set; }

@@ -6,7 +6,7 @@ namespace AutomationFramework.Config.Interfaces
 {
     public interface IAutomationConfig
     {
-        Browser TargetBrowser { get; }
+        IList<Browser> TargetBrowsers { get; }
         OperatingSystem TargetOperatingSystem { get; }
         IList<HubLocation> HubLocations { get; }
         IList<BaseUrl> BaseUrls { get; }
