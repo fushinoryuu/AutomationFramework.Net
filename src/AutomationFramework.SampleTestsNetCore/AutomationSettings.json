@@ -1,5 +1,5 @@
 {
-    "TargetBrowser": [
+    "TargetBrowsers": [
         "Chrome",
         "InternetExplorer",
         "FireFox"

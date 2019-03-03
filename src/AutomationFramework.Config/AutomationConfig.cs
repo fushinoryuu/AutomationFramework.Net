@@ -1,30 +1,32 @@
-﻿using System.IO;
-using System.Linq;
-using System.Collections.Generic;
+﻿using AutomationFramework.Config.Containers;
+using AutomationFramework.Config.Enums;
+using AutomationFramework.Config.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using AutomationFramework.Config.Enums;
-using AutomationFramework.Config.Containers;
-using AutomationFramework.Config.Interfaces;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace AutomationFramework.Config
 {
     public class AutomationConfig : IAutomationConfig
     {
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("TargetBrowsers", ItemConverterType = typeof(StringEnumConverter))]
         public IList<Browser> TargetBrowsers { get; set; }
 
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("TargetOperatingSystem"), JsonConverter(typeof(StringEnumConverter))]
         public OperatingSystem TargetOperatingSystem { get; set; }
 
+        [JsonProperty("HubLocations")]
         public IList<HubLocation> HubLocations { get; set; }
 
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("ActiveDriverLocation"), JsonConverter(typeof(StringEnumConverter))]
         public DriverLocation ActiveDriverLocation { get; set; }
 
+        [JsonProperty("BaseUrls")]
         public IList<BaseUrl> BaseUrls { get; set; }
 
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("ActiveEnvironment"), JsonConverter(typeof(StringEnumConverter))]
         public Environment ActiveEnvironment { get; set; }
 
         public static IAutomationConfig DeserializeConfig(string fileName)
@@ -37,17 +39,15 @@ namespace AutomationFramework.Config
         public string GetBaseUrl(Environment environment)
         {
             return BaseUrls
-                .Where(item => item.EnvironmentName.Equals(environment))
-                .FirstOrDefault()
-                .Url;
+                .FirstOrDefault(item => item.EnvironmentName.Equals(environment))
+                ?.Url;
         }
 
         public string GetDriverLocation(DriverLocation location)
         {
             return HubLocations
-                .Where(item => item.Location.Equals(location))
-                .FirstOrDefault()
-                .Url;
+                .FirstOrDefault(item => item.Location.Equals(location))
+                ?.Url;
         }
     }
 }
