@@ -1,15 +1,16 @@
-using NUnit.Framework;
 using AutomationFramework.Config;
-using AutomationFramework.Driver;
+using AutomationFramework.Config.Enums;
 using AutomationFramework.Config.Interfaces;
+using AutomationFramework.Driver;
 using AutomationFramework.Driver.Interfaces;
-using AutomationFramework.PageObjects.Utilities;
 using AutomationFramework.PageObjects.Interfaces;
+using AutomationFramework.PageObjects.Utilities;
+using NUnit.Framework;
 
 namespace AutomationFramework.UiTesting
 {
     [TestFixture, Parallelizable]
-    public abstract class UiTest
+    public abstract class MultiBrowserUiTest
     {
         protected IAutomationDriver Driver;
         protected IWebPageFactory Factory;
@@ -21,15 +22,15 @@ namespace AutomationFramework.UiTesting
             Config = AutomationConfig.DeserializeConfig("AutomationSettings.json");
         }
 
-        [SetUp]
-        public void SetUp()
+        public void SetupDriver(Browser currentBrowser)
         {
-            Driver = new AutomationDriver(Config);
+            Driver = new AutomationDriver(Config, currentBrowser);
             Factory = new WebPageFactory(Driver);
 
             var env = Config.ActiveEnvironment;
+            var url = Config.GetBaseUrl(env);
 
-            Driver.Navigate().GoToUrl(Config.GetBaseUrl(env));
+            Driver.Navigate().GoToUrl(url);
         }
 
         [TearDown]
