@@ -1,12 +1,12 @@
-﻿using Shouldly;
-using NUnit.Framework;
+﻿using AutomationFramework.SamplePages.Pages;
 using AutomationFramework.UiTesting;
-using AutomationFramework.SamplePages.Pages;
+using NUnit.Framework;
+using Shouldly;
 
 namespace AutomationFramework.SampleTestsNetCore
 {
     [TestFixture, Parallelizable]
-    public class HomePageTests : UiTest
+    public class SimpleHomePageTests : SimpleUiTest
     {
         [Test]
         public void CheckHomePageForText()
